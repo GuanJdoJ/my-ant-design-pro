@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>系统导航</title>
+  <link rel="icon" type="img/x-ico" href="http://47.103.69.175/static/images/G.png "/>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <style type="text/css">
+    .on{
+      color:purple;
+    }
+    a{
+      color:#317ef3;
+    }
+    a:hover{
+      color:#d94048;
+    }
+    ul,li{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .pagewrap{
+      width: 50%;
+    }
+    .wrap{
+
+    }
+    .footer{
+      height: 200px;
+    }
+    #topAnchor{
+      text-align: center;
+    }
+    .env{
+      position: relative;
+      background-color: #fff;
+      border: 0;
+      border-radius: 4px;
+      background-clip: padding-box;
+      -webkit-box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
+      margin-bottom: 16px;
+    }
+    .title{
+      font-weight:bold;
+      padding: 16px 10px;
+      border-radius: 4px 4px 0 0;
+      background-color: #bae7ff;
+      color: rgba(0,0,0,.65);
+      border-bottom: 1px solid #e8e8e8;
+    }
+    .box{
+      font-size: 16px;
+      font-variant: tabular-nums;
+      -webkit-font-feature-settings: "tnum";
+      font-feature-settings: "tnum";
+      line-height: 1.5;
+      color: rgba(0,0,0,.65);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      background: #fff;
+      border-radius: 2px;
+      position: relative;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+    }
+    .env .box:last-child{
+      padding-bottom: 10px;
+    }
+    .department{
+      margin: 8px 14px;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      border-bottom: 1px solid #999;
+      font-weight: 600;
+    }
+    .cont{
+      margin:4px 10px 0 18px;
+    }
+    .cont a{
+      margin-right: 10px;
+    }
+    .cont:last-child{
+      padding-bottom: 4px;
+    }
+    #goTop{
+      position: fixed;
+      width:46px;
+      height:46px;
+      left: 52%;
+      bottom:16px;
+      background-color: #ccc;
+      text-align: center;
+      border-radius: 2px;
+      cursor: pointer;
+      padding: 3px;
+      display: flex;
+      align-items: center;
+    }
+    #goTop a{
+      color:#999;
+      text-decoration: none;
+    }
+    .toc-affix{
+      position: absolute;
+      top: 68px;
+      left: 52%;
+    }
+    .toc{
+      margin: 16px 0;
+      padding-left: 0;
+      list-style: none;
+      font-size: 15px;
+      border-left: 1px solid #ebedf0;
+    }
+    .toc a {
+      display: block;
+      width: 110px;
+      margin-left: -1px;
+      padding-left: 16px;
+      overflow: hidden;
+      color: rgba(0,0,0,.65);
+      text-decoration: none;
+      background-color: transparent;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      border-left: 1px solid transparent;
+      -webkit-transition: all .3s ease;
+      transition: all .3s ease;
+    }
+    .toc a.current {
+      color: #1890ff;
+      border-color: #1890ff;
+    }
+    ul.toc>li:not(:last-child) {
+      margin-bottom: 4px;
+    }
+    ul.toc>li {
+      margin-left: 0;
+      padding-left: 0;
+      line-height: 1.5;
+      list-style: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="pagewrap">
+    <h2 id="topAnchor">系统页面导航</h2>
+    <div class="wrap">
+      <div class="env" id="mit">
+        <div class="title">mit环境</div>
+        <div class="box">
+          <div class="department">电商</div>
+          <div class="cont">
+            <a href="http://www.baidu.com" target="_blank">百度</a>
+            <a href="http://www.jd.com" target="_blank">京东</a>
+            <a href="javascript:;" target="_blank">实单求购</a>
+            <a href="javascript:;" target="_blank">买家中心首页</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">首页</a>
+            <a href="javascript:;" target="_blank">现货大厅</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">老铁社区</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">鹰眼后台</a>
+            <a href="javascript:;" target="_blank">TP</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="env" id="test">
+        <div class="title">test环境</div>
+        <div class="box">
+          <div class="department">电商</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">首页</a>
+            <a href="javascript:;" target="_blank">商城</a>
+            <a href="javascript:;" target="_blank">实单求购</a>
+            <a href="javascript:;" target="_blank">买家中心首页</a>
+            <a href="javascript:;" target="_blank">买家-我的求购</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">首页</a>
+            <a href="javascript:;" target="_blank">现货大厅</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">社区</a>
+            <a href="javascript:;" target="_blank">积分商城</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">鹰眼后台</a>
+            <a href="javascript:;" target="_blank">TP</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="department">云商</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">掌柜首页</a>
+            <a href="javascript:;" target="_blank">我的报价</a>
+            <a href="javascript:;" target="_blank">资源管理</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">后台配置（root 123）</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="env" id="uat">
+        <div class="title">uat环境</div>
+        <div class="box">
+          <div class="department">电商</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">首页</a>
+            <a href="javascript:;" target="_blank">商城</a>
+            <a href="javascript:;" target="_blank">实单求购</a>
+            <a href="javascript:;" target="_blank">买家中心首页</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">首页</a>
+            <a href="javascript:;" target="_blank">现货大厅</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">社区</a>
+            <a href="javascript:;" target="_blank">积分商城</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">鹰眼后台</a>
+            <a href="javascript:;" target="_blank">TP</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="department">云商</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">掌柜首页</a>
+            <a href="javascript:;" target="_blank">我的报价</a>
+            <a href="javascript:;" target="_blank">资源管理</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">后台配置（root 123）</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="env" id="prod">
+        <div class="title">生产环境</div>
+        <div class="box">
+          <div class="department">电商</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">首页</a>
+            <a href="javascript:;" target="_blank">商城</a>
+            <a href="javascript:;" target="_blank">实单求购</a>
+            <a href="javascript:;" target="_blank">买家中心首页</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">首页</a>
+            <a href="javascript:;" target="_blank">现货大厅</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">社区</a>
+            <a href="javascript:;" target="_blank">积分商城</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">鹰眼后台</a>
+            <a href="javascript:;" target="_blank">找钢TP</a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="department">云商</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">掌柜首页</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="env" id="other">
+        <div class="title">其他</div>
+        <div class="box">
+          <div class="department">PRD</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">用户、交易、销售、店铺</a>
+          </div>
+          <div class="department">常用</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">PASS平台</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">监控大盘</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">测试管理平台</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">Jar包版本</a>
+          </div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">人</a>
+          </div>
+          <div class="department">信任</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">https://sso.xxxmit.com</a>
+            <a href="javascript:;" target="_blank">https://sso.xxxtest.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 模板 -->
+      <div class="env" id="template">
+        <div class="title">[template]</div>
+        <div class="box">
+          <div class="department">[template]</div>
+          <div class="cont">
+            <a href="javascript:;" target="_blank">[template]</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer"></div>
+    <div class="toc-affix">
+      <div class="affix">
+        <ul class="toc">
+          <li><a class="current" href="#mit" title="#mit">mit环境</a></li>
+          <li><a href="#test" title="#test">test环境</a></li>
+          <li><a href="#uat" title="#uat">uat环境</a></li>
+          <li><a href="#prod" title="#prod">生产环境</a></li>
+          <li><a href="#other" title="#other">其他</a></li>
+          <li><a href="#template" title="#template">[template]</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div id="goTop"><a href="#topAnchor">回到顶部</a></div>
+  </div>
+
+</body>
+<script type="text/javascript">
+  $(window).scroll(function(){
+    var $this = $(this);
+    if($this.scrollTop() > $("#topAnchor").outerHeight(true)){
+      $(".toc-affix").css("position","fixed").css("top","0");
+    }
+    if($this.scrollTop() < $("#topAnchor").outerHeight(true)){
+      $(".toc-affix").css("position","absolute").css("top","71px");
+    }
+
+    var arr = ["#mit","#test","#uat","#prod","#other","#template"];
+    var length = arr.length;
+    $.each(arr,function(index,item){
+      if(index === 0){
+        if($this.scrollTop() < $(item).offset().top + $(item).outerHeight(true)){
+          $(".toc a").each(function(indexInner,itemInner){
+            if(itemInner.title === item){
+              $(".toc").find("a").removeClass("current");
+              $(itemInner).addClass("current")
+            }
+          })
+        }
+      }else if(index === length - 1){
+        if($this.scrollTop() >= $(item).offset().top){
+          $(".toc a").each(function(indexInner,itemInner){
+            if(itemInner.title === item){
+              $(".toc").find("a").removeClass("current");
+              $(itemInner).addClass("current")
+            }
+          })
+        }
+      }else{
+        if($this.scrollTop() >= $(item).offset().top && $this.scrollTop() < $(item).offset().top + $(item).outerHeight(true)){
+          $(".toc a").each(function(indexInner,itemInner){
+            if(itemInner.title === item){
+              $(".toc").find("a").removeClass("current");
+              $(itemInner).addClass("current")
+            }
+          })
+        }
+      }
+    })
+
+  })
+
+  $(".wrap").find("a").click(function() {
+    $(".wrap").find("a").removeClass("on");
+    $(this).addClass("on");
+  });
+  $(".toc").find("a").click(function() {
+    $(".toc").find("a").removeClass("current");
+    $(this).addClass("current");
+  })
+
+  $(function(){
+
+  })
+</script>
+</html>
