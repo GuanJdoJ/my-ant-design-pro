@@ -31,6 +31,7 @@ const footerRender = (_, defaultDom) => {
             }}
         >
             Ant Design Pro 版权所有 © 2019 由 GuanJdoJ 支持
+            <p>ICP证：<a href="http://www.beian.miit.gov.cn">鄂ICP备19021085号-1</a></p>
         </div>
     );
 };
